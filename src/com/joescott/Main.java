@@ -12,6 +12,8 @@ public class Main {
             System.out.println("Invalid parameters");
         }
 
+        calcFeetAndInchesToCentimeters(157);
+
         // Create a method called calcFeetAndInchesToCentimeters
         // It needs to have two parameters.
         // feet is the first parameter, inches is the 2nd parameter
@@ -50,6 +52,18 @@ public class Main {
         centimeters += inches * 2.54;
         System.out.println(feet + " feet, " + inches + " inches = " + centimeters + " cm");
         return centimeters;
+    }
+
+    public static double calcFeetAndInchesToCentimeters(double inches) {
+
+        if (inches < 0) {
+            return -1;
+        }
+
+        double feet = (int) inches / 12;
+        double remainingInches = (int) inches % 12;
+        System.out.println(inches + " inches is equal to " + feet + " feet and " + remainingInches + " inches");
+        return calcFeetAndInchesToCentimeters(feet, remainingInches);
     }
 
 
